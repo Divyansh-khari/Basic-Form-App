@@ -40,7 +40,7 @@ var app=express()
     try {
       console.log("Enter into try");
       const client = await pool.connect();
-      var sql = "INSERT INTO Person VALUES(${name}, ${size},${height},${type},${salary})";
+      var sql = 'INSERT INTO Person VALUES(name,size,height,type,salary)'';
 
 
        const result = await client.query(sql);
