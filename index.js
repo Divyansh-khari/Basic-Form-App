@@ -38,7 +38,7 @@ var app=express()
     try{
 
     var insertQuery=`INSERT INTO Person VALUES('${name}',${size},${height},'${type}',${salary})`;
-    const result = await client.query(sql);
+    const result = await client.query(insertQuery);
 
 
          console.log(result);
