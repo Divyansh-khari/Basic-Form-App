@@ -20,6 +20,8 @@ showTimes = () => {
 }
 
 var app=express()
+  app.use(express.json());
+  app.use(express.urlencoded({extended:false}));
   app.use(express.static(path.join(__dirname, 'public')))
   app.set('views', path.join(__dirname, 'views'))
   app.set('view engine', 'ejs')
@@ -47,15 +49,15 @@ var app=express()
     var salary=req.body.usalary;
     /*try {
       const client = await pool.connect();
-      //const result = await client.query('INSERT INTO Person VALUES(${name},${size},${height},${type},${salary}');
-      //const results = { 'results': (result) ? result.rows : null};
-      //res.render('pages/db', results );
+      onst result = await client.query('INSERT INTO Person VALUES(${name},${size},${height},${type},${salary}');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db', results );
       client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
     }*/
-    //res.send('username: ${name},age: ${age}');
+    res.send('username: ${name},size: ${size}, height: ${height},type:${type},salary:${salary}');
     res.send("Thanks for submitting application");
   });
   app.get('/users/:id', (req,res)=>{
