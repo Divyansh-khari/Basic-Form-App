@@ -5,19 +5,11 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
-const cool = require('cool-ascii-faces');
+
 const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 
-showTimes = () => {
-  let result = '';
-  const times = process.env.TIMES || 5;
-  for (i = 0; i < times; i++) {
-    result += i + ' ';
-  }
-  return result;
-}
 
 var app=express()
   app.use(express.json());
@@ -26,8 +18,6 @@ var app=express()
   app.set('views', path.join(__dirname, 'views'))
   app.set('view engine', 'ejs')
   app.get('/', (req, res) => res.render('pages/index'))
-  app.get('/cool', (req, res) => res.send(cool()))
-  app.get('/times', (req, res) => res.send(showTimes()))
   app.get('/db', async (req, res) => {
     try {
       const client = await pool.connect();
@@ -50,10 +40,10 @@ var app=express()
     try {
       console.log("Enter into try");
       const client = await pool.connect();
-      //var sql = "INSERT INTO Person VALUES('Divyansh', 12, 170,'A',120000)";
+      var sql = "INSERT INTO Person VALUES('Divyansh', 12, 170,'A',120000)";
 
 
-       client.query('INSERT INTO Person VALUES('Divya', 12, 170,'A',120000)');
+       const result = await client.query(sql);
 
 
       //console.log(result);
