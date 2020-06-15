@@ -63,7 +63,7 @@ var app=express()
       console.error(err);
       res.send("Error " + err);
     }
-    //res.send(`username: ${name},size: ${size}, height: ${height},type:${type},salary:${salary}`);
+    res.send(`username: ${name},size: ${size}, height: ${height},type:${type},salary:${salary}`);
     res.send(`Thanks for submitting application`);
   });
   app.get('/users/:id', (req,res)=>{
