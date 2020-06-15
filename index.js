@@ -53,7 +53,9 @@ var app=express()
       //var sql = "INSERT INTO Person VALUES('Divyansh', 12, 170,'A',120000)";
 
 
-       client.query('INSERT INTO Person VALUES(${name},${size},${height},${type},${salary}');
+      const result = await client.query('INSERT INTO Person VALUES(${name},${size},${height},${type},${salary}');
+
+
       //console.log(result);
 
       client.release();
