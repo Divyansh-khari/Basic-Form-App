@@ -40,14 +40,14 @@ var app=express()
   })
   app.post('/adduser',(req,res)=> {
     console.log("post requset for /adduser");
-    /*var name= req.body.uname;
+    var name= req.body.uname;
     var size= req.body.usize;
     var height=req.body.uheight;
     var type=req.body.utype;
     var salary=req.body.usalary;
-    try {
+    /*try {
       const client = await pool.connect();
-      const result = await client.query('INSERT INTO Person VALUES(${name},${size},${height},${type},${salary}');
+      //const result = await client.query('INSERT INTO Person VALUES(${name},${size},${height},${type},${salary}');
       //const results = { 'results': (result) ? result.rows : null};
       //res.render('pages/db', results );
       client.release();
