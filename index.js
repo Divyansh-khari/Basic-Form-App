@@ -19,14 +19,14 @@ showTimes = () => {
   return result;
 }
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .get('/cool', (req, res) => res.send(cool()))
-  .get('/times', (req, res) => res.send(showTimes()))
-  .get('/db', async (req, res) => {
+var app=express()
+  app.use(express.static(path.join(__dirname, 'public')))
+  app.set('views', path.join(__dirname, 'views'))
+  app.set('view engine', 'ejs')
+  app.get('/', (req, res) => res.render('pages/index'))
+  app.get('/cool', (req, res) => res.send(cool()))
+  app.get('/times', (req, res) => res.send(showTimes()))
+  app.get('/db', async (req, res) => {
     try {
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM Customer');
@@ -38,4 +38,16 @@ express()
       res.send("Error " + err);
     }
   })
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+  app.post('/adduser',(req,res)=> {
+    console.log("post requset for /adduser");
+    //var uname= req.body.uname;
+    //var age= req.body.age;
+    //res.send('username: ${uname},age: ${age}');
+    res.send("Thanks for submitting application");
+  });
+  app.get('/users/:id', (req,res)=>{
+
+
+
+  });
+  app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
