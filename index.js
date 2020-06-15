@@ -34,7 +34,9 @@ var app=express()
     var height=req.body.uheight;
     var type=req.body.utype;
     var salary=req.body.usalary;
+    const client = await pool.connect();
     try{
+
     var insertQuery=`INSERT INTO Person VALUES('${name}',${size},${height},'${type}',${salary})`;
     const result = await client.query(sql);
 
