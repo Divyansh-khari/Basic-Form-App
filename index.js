@@ -40,7 +40,7 @@ var app=express()
       res.send("Error " + err);
     }
   })
-  app.post('/adduser',(req,res)=> {
+  app.post('/adduser',async (req,res)=> {
     console.log("post requset for /adduser");
     var name= req.body.uname;
     var size= req.body.usize;
