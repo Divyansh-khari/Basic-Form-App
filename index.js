@@ -34,25 +34,15 @@ var app=express()
     var height=req.body.uheight;
     var type=req.body.utype;
     var salary=req.body.usalary;
-    try {
-      console.log("Enter into try");
-      const client = await pool.connect();
-      var sql = `INSERT INTO Person VALUES(name,size,height,type,salary)`;
-
-
-       const result = await client.query(sql);
-
-
-      //console.log(result);
-
-      client.release();
-    } catch (err) {
-      console.error(err);
-      res.send("Error " + err);
-    }
-    res.send(`username: ${name},size: ${size}, height: ${height},type:${type},salary:${salary}`);
-    res.send(`Thanks for submitting application`);
-  });
+    var insertQuery=`INSERT INTO Person VALUES('name',size,height,'type',salary)`;
+      pool.query(insertQuery,(error,result)=>{
+        if(error){
+          res.end(error);
+        }
+        var results ={'rows': result.rows}
+        res.render('pages/db', results);
+        })
+      });
   app.get('/users/:id', (req,res)=>{
     console.log(req.params.id);
     res.send("got it");
