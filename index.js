@@ -18,17 +18,15 @@ var app=express()
   app.set('view engine', 'ejs')
   app.get('/', (req, res) => res.render('pages/index'))
   app.get('/db', async (req, res) => {
-    try {
-      const client = await pool.connect();
-      const result = await client.query('SELECT * FROM Person');
-      const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/db', results );
-      client.release();
-    } catch (err) {
-      console.error(err);
-      res.send("Error " + err);
-    }
-  })
+    var getUserQuery=`SELECT * FROM Person`;
+    pool.query(getUserQuery,(error,result) =>{
+      if(error){
+        res.end(error);
+      }
+      var results ={'rows': result.rows}
+      res.render('pages/db', results);
+      })
+  });
   app.post('/adduser',async (req,res)=> {
     console.log("post requset for /adduser");
     var name= req.body.uname;
