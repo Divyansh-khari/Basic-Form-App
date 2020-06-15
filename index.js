@@ -40,9 +40,22 @@ var app=express()
   })
   app.post('/adduser',(req,res)=> {
     console.log("post requset for /adduser");
-    //var uname= req.body.uname;
-    //var age= req.body.age;
-    //res.send('username: ${uname},age: ${age}');
+    var name= req.body.uname;
+    var size= req.body.usize;
+    var height=req.body.uheight;
+    var type=req.body.utype;
+    var salary=req.body.usalary;
+    try {
+      const client = await pool.connect();
+      const result = await client.query('INSERT INTO Person VALUES(${name},${size},${height},${type},${salary}');
+      //const results = { 'results': (result) ? result.rows : null};
+      //res.render('pages/db', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+    //res.send('username: ${name},age: ${age}');
     res.send("Thanks for submitting application");
   });
   app.get('/users/:id', (req,res)=>{
