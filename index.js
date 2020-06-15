@@ -40,7 +40,7 @@ var app=express()
   })
   app.post('/adduser',(req,res)=> {
     console.log("post requset for /adduser");
-    var name= req.body.uname;
+    /*var name= req.body.uname;
     var size= req.body.usize;
     var height=req.body.uheight;
     var type=req.body.utype;
@@ -54,7 +54,7 @@ var app=express()
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
-    }
+    }*/
     //res.send('username: ${name},age: ${age}');
     res.send("Thanks for submitting application");
   });
