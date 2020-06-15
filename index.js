@@ -1,3 +1,7 @@
+const express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
+
 const { Pool } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -5,11 +9,6 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
-
-const express = require('express');
-const path = require('path');
-const PORT = process.env.PORT || 5000;
-
 
 var app=express()
   app.use(express.json());
@@ -40,7 +39,7 @@ var app=express()
     try {
       console.log("Enter into try");
       const client = await pool.connect();
-      var sql = 'INSERT INTO Person VALUES(name,size,height,type,salary)';
+      var sql = `INSERT INTO Person VALUES(name,size,height,type,salary)`;
 
 
        const result = await client.query(sql);
