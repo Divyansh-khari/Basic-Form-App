@@ -28,7 +28,6 @@ var app=express()
       })
   });
   app.post('/adduser',async (req,res)=> {
-    console.log("post requset for /adduser");
     var name= req.body.uname;
     var size= req.body.usize;
     var height=req.body.uheight;
@@ -39,10 +38,6 @@ var app=express()
 
     var insertQuery=`INSERT INTO Person VALUES('${name}',${size},${height},'${type}',${salary})`;
     const result = await client.query(insertQuery);
-
-
-         console.log(result);
-
          client.release();
        } catch (err) {
          console.error(err);
@@ -50,9 +45,24 @@ var app=express()
        }
        res.send(`Thanks for submitting application`);
 
-
-
       });
+      app.post('/update',async (req,res)=>{
+        var name= req.body.uname;
+        var size= req.body.usize;
+        var height=req.body.uheight;
+        var type=req.body.utype;
+        var salary=req.body.usalary;
+        const client = await pool.connect();
+        try{
+          var upadateQuery=`UPDATE TABLE Person SET size=${size},height=${height},type='${type}', salary=${salary} WHERE name='${name}'`;
+          const result = await client.query(upadateQuery);
+               client.release();
+             } catch (err) {
+               console.error(err);
+               res.send("Error " + err);
+             }
+             res.send(`Thanks for updating the application information`);
+      })
   app.get('/users/:id', (req,res)=>{
     console.log(req.params.id);
     res.send("got it");
