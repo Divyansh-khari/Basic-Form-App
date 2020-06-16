@@ -54,7 +54,7 @@ var app=express()
         var salary=req.body.usalary;
         const client = await pool.connect();
         try{
-          var upadateQuery=`UPDATE TABLE Person SET size=${size},height=${height},type='${type}', salary=${salary} WHERE name='${name}'`;
+          var upadateQuery=`UPDATE Person SET size=${size},height=${height},type='${type}', salary=${salary} WHERE name='${name}'`;
           const result = await client.query(upadateQuery);
                client.release();
              } catch (err) {
