@@ -63,6 +63,19 @@ var app=express()
              }
              res.send(`Thanks for updating the application information`);
       })
+      app.post('/mydelete',async(req,res)=>{
+        var name= req.body.uname;
+        const client = await pool.connect();
+        try{
+          var deleteQuery=`DELETE FROM Person WHERE name='${name}'`;
+          const result = await client.query(deleteQuery);
+               client.release();
+             } catch (err) {
+               console.error(err);
+               res.send("Error " + err);
+             }
+             res.send(`Thanks for updating the application information`);
+      })
   app.get('/users/:id', (req,res)=>{
     console.log(req.params.id);
     res.send("got it");
