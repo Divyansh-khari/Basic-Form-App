@@ -13,11 +13,38 @@
 
 <ul>
     <% rows.forEach(function(r) { %>
+
         <li><%= r.name %> - <%= r.size %> - <%= r.height %> - <%= r.type %> - <%= r.salary  %></li>
     <% }); %>
 </ul>
 
 </div>
+<div>
+  <canvas width="200" height="200" id="myCanvas"></canvas>
+</div>
+<script>
+var canvas=document.getElementById("myCanvas");
+var sky=canvas.getContext("2d");
+var l=10;
+<% rows.forEach(function(r) { %>
 
+    <%if(r.type=='A'){ %>
+      sky.fillStyle=rgb(200,0,0);
+      sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
+      l=l+<%=r.size%>;
+    <%}%>
+
+      <%if(r.type=='B'){ %>
+        sky.fillStyle=rgb(0,200,0);
+        sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
+        l=l+<%=r.size%>;
+      <%}%>
+      <%if(r.type=='C'){ %>
+        sky.fillStyle=rgb(0,0,200);
+        sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
+        l=l+<%=r.size%>;
+      <%}%>
+<% }); %>
+</script>
 </body>
 </html>
