@@ -31,23 +31,26 @@ console.log("2");
 <% rows.forEach(function(r) { %>
 console.log("3");
     <%if(r.type=='A'){ %>
+      console.log("5");
       sky.fillStyle=rgb(200,0,0);
       sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
       l=l+<%=r.size%>;
     <%}%>
 console.log("4");
       <%if(r.type=='B'){ %>
+        console.log("6");
         sky.fillStyle=rgb(0,200,0);
         sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
         l=l+<%=r.size%>;
       <%}%>
       <%if(r.type=='C'){ %>
+        console.log("7");
         sky.fillStyle=rgb(0,0,200);
         sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
         l=l+<%=r.size%>;
       <%}%>
 <% }); %>
 </script>
-console.log("5");
+
 </body>
 </html>
