@@ -29,7 +29,7 @@ var sky=canvas.getContext("2d");
 var l=10;
 
 <% rows.forEach(function(r) { %>
-
+<%=r.type%>
     <%if(r.type=='A'){ %>
       console.log("5");
       sky.fillStyle=rgb(200,0,0);
