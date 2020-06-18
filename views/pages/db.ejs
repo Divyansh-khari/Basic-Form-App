@@ -23,17 +23,19 @@
   <canvas width="200" height="200" id="myCanvas"></canvas>
 </div>
 <script>
+console.log("1");
 var canvas=document.getElementById("myCanvas");
 var sky=canvas.getContext("2d");
 var l=10;
+console.log("2");
 <% rows.forEach(function(r) { %>
-
+console.log("3");
     <%if(r.type=='A'){ %>
       sky.fillStyle=rgb(200,0,0);
       sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
       l=l+<%=r.size%>;
     <%}%>
-
+console.log("4");
       <%if(r.type=='B'){ %>
         sky.fillStyle=rgb(0,200,0);
         sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
@@ -46,5 +48,6 @@ var l=10;
       <%}%>
 <% }); %>
 </script>
+console.log("5");
 </body>
 </html>
