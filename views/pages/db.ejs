@@ -44,7 +44,7 @@ var l=10;
 var sky=canvas.getContext("2d");
 var b='A';
 <% rows.forEach(function(r) { %>
-if(<%r.size%>=='A'){
+if(<%=r.type%>=='A'){
 
 sky.fillStyle="rgb(200,0,0)";
 sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
