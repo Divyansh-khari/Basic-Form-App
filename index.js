@@ -76,10 +76,9 @@ var app=express()
              }
              res.send(`Thanks for updating the application information`);
       })
+      
   app.get('/users/:id', (req,res)=>{
     console.log(req.params.id);
     res.send("got it");
-
-
   });
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
