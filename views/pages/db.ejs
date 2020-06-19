@@ -10,22 +10,25 @@
 
 <div class="container">
 <h2>Database Results</h2>
-
+<table style="border:1px solid #000000;">
+  <tr>
+    <th>Name  </th>
+    <th>Size  </th>
+    <th>Height  </th>
+    <th>type  </th>
+    <th>salary  </th>
+  </tr>
 
     <% rows.forEach(function(r) { %>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Size</th>
-          <th>Height</th>
-          <th>type</th>
-          <th>salary</th>
+      <tr>
+        <td><%= r.name %></td>
+        <td><%= r.size %></td>
+        <td> <%= r.height %></td>
+        <td> <%= r.type %></td>
+        <td> <%= r.salary %></td
         </tr>
-      </table>
-
-        <li><%= r.name %> - <%= r.size %> - <%= r.height %> - <%= r.type %> - <%= r.salary  %></li>
     <% }); %>
-
+</table>
 
 </div>
 
