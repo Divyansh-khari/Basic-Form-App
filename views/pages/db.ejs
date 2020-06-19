@@ -55,12 +55,14 @@ if('<%=r.type%>'=='B         '){
 
 sky.fillStyle="rgb(0,200,0)";
 sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
+sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
 l=l+<%=r.size%>+10;
 }
 if('<%=r.type%>'=='C         '){
 
 sky.fillStyle="rgb(0,0,200)";
 sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
+sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
 l=l+<%=r.size%>+10;
 }
 
