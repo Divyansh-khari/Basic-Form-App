@@ -30,14 +30,13 @@ console.log("1");
 var canvas=document.getElementById('myCanvas');
 var l=10;
 var sky=canvas.getContext("2d");
-sky.fillStyle="rgb(200,0,0)";
-sky.fillRect(0,370,50,30);
+
 <% rows.forEach(function(r) { %>
   console.log("2");
 //<%= r.type %>
 sky.fillStyle="rgb(200,0,0)";
-sky.fillRect(l,30,<%=r.size%>,<%=r.height%>);
-l=l+<%=r.size%>;
+sky.fillRect(l,370,<%=r.size%>,<%=r.height%>);
+l=l+<%=r.size%>+10;
     <%if(r.type=='A'){ %>
       console.log("5");
       sky.fillStyle="rgb(200,0,0)";
