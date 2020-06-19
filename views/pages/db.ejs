@@ -26,11 +26,14 @@
   </canvas>
 </div>
 <script>
+console.log("1");
 var canvas=document.getElementById('myCanvas');
 var sky=canvas.getContext("2d");
 
 <% rows.forEach(function(r) { %>
-<%=r.type%>
+  console.log("2");
+<%= r.type %>
+
     <%if(r.type=='A'){ %>
       console.log("5");
       sky.fillStyle=rgb(200,0,0);
