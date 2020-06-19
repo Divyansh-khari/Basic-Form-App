@@ -12,20 +12,20 @@
 <h2>Database Results</h2>
 <table style="border:1px solid #000000 ;">
   <tr style="border:1px solid #000000 ;">
-    <th>Name  </th>
-    <th>Size  </th>
-    <th>Height  </th>
-    <th>type  </th>
-    <th>salary  </th>
+    <th style="border:1px solid #000000 ;">Name  </th>
+    <th style="border:1px solid #000000 ;">Size  </th>
+    <th style="border:1px solid #000000 ;">Height  </th>
+    <th style="border:1px solid #000000 ;">type  </th>
+    <th style="border:1px solid #000000 ;">salary  </th>
   </tr>
 
     <% rows.forEach(function(r) { %>
       <tr style="border:1px solid #000000 ;">
-        <td><%= r.name %></td>
-        <td><%= r.size %></td>
-        <td> <%= r.height %></td>
-        <td> <%= r.type %></td>
-        <td> <%= r.salary %></td
+        <td style="border:1px solid #000000 ;"><%= r.name %></td>
+        <td style="border:1px solid #000000 ;"><%= r.size %></td>
+        <td style="border:1px solid #000000 ;"> <%= r.height %></td>
+        <td style="border:1px solid #000000 ;"> <%= r.type %></td>
+        <td style="border:1px solid #000000 ;"> <%= r.salary %></td>
         </tr>
     <% }); %>
 </table>
