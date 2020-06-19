@@ -15,8 +15,8 @@
     <th style="border:1px solid #000000 ;">Name  </th>
     <th style="border:1px solid #000000 ;">Size  </th>
     <th style="border:1px solid #000000 ;">Height  </th>
-    <th style="border:1px solid #000000 ;">type  </th>
-    <th style="border:1px solid #000000 ;">salary  </th>
+    <th style="border:1px solid #000000 ;">Type  </th>
+    <th style="border:1px solid #000000 ;">Salary  </th>
   </tr>
 
     <% rows.forEach(function(r) { %>
@@ -47,7 +47,7 @@ var sky=canvas.getContext("2d");
 
 
 sky.fillStyle="rgb(200,0,0)";
-sky.fillRect(l,370,<%=r.size%>,<%=r.height%>);
+sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
 l=l+<%=r.size%>+10;
 
 <% }); %>
