@@ -5,6 +5,9 @@ td{
   border: 1pt solid black;
 
 }
+th{
+  border: 1pt solid black;
+}
 caption{
   font-size: 20pt;
   color: BlueViolet;
