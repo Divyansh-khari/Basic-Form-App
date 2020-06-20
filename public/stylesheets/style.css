@@ -21,9 +21,9 @@ caption{
    border-bottom: 1px solid white;
     color: #6E6E6E;
   }
-  [type="text"]{
-    border: 5px solid Magenta;
-  }
-  [type="number"]{
-  border: 5px solid Magenta;
+[type="text"]{
+  border: 5px solid green;
+}
+[type="text"]{
+  border: 5px solid green;
 }
