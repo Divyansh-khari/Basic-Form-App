@@ -47,7 +47,7 @@ var b='A';
 if('<%=r.type%>'=='A         '){
 
 sky.fillStyle="rgb(200,0,0)";
-sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>) ;
+sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>).addEventListener('click',(evt)=>{console.log("Hello 1")}) ;
 
 sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
 l=l+<%=r.size%>+10;
@@ -56,7 +56,7 @@ l=l+<%=r.size%>+10;
 else if('<%=r.type%>'=='B         '){
 
 sky.fillStyle="rgb(0,200,0)";
-sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
+sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>).addEventListener('click',(evt)=>{console.log("Hello 2")}) ;;
 
 sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
 l=l+<%=r.size%>+10;
@@ -64,14 +64,14 @@ l=l+<%=r.size%>+10;
 else if('<%=r.type%>'=='C         '){
 
 sky.fillStyle="rgb(0,0,200)";
-sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
+sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>).addEventListener('click',(evt)=>{console.log("Hello 3")}) ;;
 
 sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
 l=l+<%=r.size%>+10;
 }
 else{
   sky.fillStyle="rgb(200,40,120)";
-  sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
+  sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>).addEventListener('click',(evt)=>{console.log("Hello 4")}) ;;
 
   sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
   l=l+<%=r.size%>+10;
