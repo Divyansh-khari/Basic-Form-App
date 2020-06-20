@@ -19,7 +19,7 @@ caption{
  tr:hover {
    background-color:lightblue;
    border-bottom: 1px solid white;
-    color: #6E6E6E;
+    color: Lime;
   }
 [type="text"]{
   border: 5px solid green;
