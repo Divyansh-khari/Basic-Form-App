@@ -2,6 +2,7 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
+  <link rel="stylesheet" href="./stylesheets/style.css" />
 </head>
 
 <body>
@@ -9,23 +10,24 @@
 <% include ../partials/nav.ejs %>
 
 <div class="container">
-<h2>Database Results</h2>
-<table style="border:1px solid #000000 ;">
-  <tr style="border:1px solid #000000 ;">
-    <th style="border:1px solid #000000 ;">Name  </th>
-    <th style="border:1px solid #000000 ;">Size  </th>
-    <th style="border:1px solid #000000 ;">Height  </th>
-    <th style="border:1px solid #000000 ;">Type  </th>
-    <th style="border:1px solid #000000 ;">Salary  </th>
+
+<table >
+  <caption> Database Results:</caption>
+  <tr >
+    <th >Name  </th>
+    <th >Size  </th>
+    <th >Height  </th>
+    <th >Type  </th>
+    <th >Salary  </th>
   </tr>
 
     <% rows.forEach(function(r) { %>
-      <tr style="border:1px solid #000000 ;">
-        <td style="border:1px solid #000000 ;"><%= r.name %></td>
-        <td style="border:1px solid #000000 ;"><%= r.size %></td>
-        <td style="border:1px solid #000000 ;"> <%= r.height %></td>
-        <td style="border:1px solid #000000 ;"> <%= r.type %></td>
-        <td style="border:1px solid #000000 ;"> <%= r.salary %></td>
+      <tr>
+        <td ><%= r.name %></td>
+        <td ><%= r.size %></td>
+        <td > <%= r.height %></td>
+        <td > <%= r.type %></td>
+        <td > <%= r.salary %></td>
         </tr>
     <% }); %>
 </table>
