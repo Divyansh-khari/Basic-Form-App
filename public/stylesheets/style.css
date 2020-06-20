@@ -5,6 +5,10 @@ td{
   border: 1pt solid black;
 
 }
+body{
+  background-color: Azure;
+  font-family: Arial;
+}
 th{
   border: 1pt solid black;
 }
@@ -17,3 +21,9 @@ caption{
    border-bottom: 1px solid white;
     color: #6E6E6E;
   }
+  [type="text"]{
+    border: 5px solid Magenta;
+  }
+  [type="number"]{
+  border: 5px solid Magenta;
+}
