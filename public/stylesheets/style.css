@@ -27,3 +27,15 @@ caption{
 [type="text"]{
   border: 5px solid green;
 }
+.Magenta{
+  color: Red;
+  font-size: 30pt;
+  text-shadow: 20px 20px 10px rgba(0,0,0,0.5);
+  font-weight: bold;
+}
+.Roy{
+  color: Magenta;
+  font-size: 30pt;
+  text-shadow: 4px 4px 0 #5C6BC0;
+  font-weight: bold;
+}
