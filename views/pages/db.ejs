@@ -53,7 +53,7 @@ sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
 
 sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
 l=l+<%=r.size%>+10;
-
+canvas.addEventListener('click',(evt)=>{console.log("Hello")});
 }
 else if('<%=r.type%>'=='B         '){
 
@@ -62,6 +62,7 @@ sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
 
 sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
 l=l+<%=r.size%>+10;
+canvas.addEventListener('click',(evt)=>{console.log("Hello")});
 }
 else if('<%=r.type%>'=='C         '){
 
@@ -70,6 +71,7 @@ sky.fillRect(l,400-<%=r.height%>,<%=r.size%>,<%=r.height%>);
 
 sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
 l=l+<%=r.size%>+10;
+canvas.addEventListener('click',(evt)=>{console.log("Hello")});
 }
 else{
   sky.fillStyle="rgb(200,40,120)";
@@ -77,8 +79,9 @@ else{
 
   sky.fillText("<%= r.name %>",l ,400-<%=r.height%> );
   l=l+<%=r.size%>+10;
+  canvas.addEventListener('click',(evt)=>{console.log("Hello")});
 }
-canvas.addEventListener('click',(evt)=>{console.log("Hello")});
+
 <% }); %>
 
 
