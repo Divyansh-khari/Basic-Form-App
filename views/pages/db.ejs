@@ -91,16 +91,7 @@ else{
 <% }); %>
 
 canvas.addEventListener('click',(evt)=>{
-  var getUserInfo=`SELECT * FROM Person WHERE name='${name}'`;
-  const result = await client.query(deleteQuery);
-       client.release();
-     } catch (err) {
-       console.error(err);
-       res.send("Error " + err);
-     }
-     res.send(`Thanks for updating the application information`);
-
-
+  
 });
 </script>
 
