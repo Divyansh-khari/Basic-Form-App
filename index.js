@@ -27,6 +27,20 @@ var app=express()
       res.render('pages/db', results);
       })
   });
+  app.post('/seeuseratt', async(req,res)=>{
+    var name= req.body.uname;
+    var getUserQuery=`SELECT * FROM Person WHERE name='${name}'`;
+    pool.query(getUserQuery,(error,result) =>{
+      if(error){
+        res.end(error);
+      }
+      var results ={'rows': result.rows}
+      res.render('pages/see', results);
+      })
+
+
+
+  });
   app.post('/adduser',async (req,res)=> {
     var name= req.body.uname;
     var size= req.body.usize;
@@ -46,6 +60,7 @@ var app=express()
        res.send(`Thanks for submitting application`);
 
       });
+
       app.post('/update',async (req,res)=>{
         var name= req.body.uname;
         var size= req.body.usize;
@@ -76,7 +91,7 @@ var app=express()
              }
              res.send(`Thanks for updating the application information`);
       })
-      
+
   app.get('/users/:id', (req,res)=>{
     console.log(req.params.id);
     res.send("got it");

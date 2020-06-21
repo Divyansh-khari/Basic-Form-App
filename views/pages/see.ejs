@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" href="./stylesheets/style.css" />
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class="container">
+
+<table >
+  <caption> Database Results:</caption>
+  <tr >
+    <th >Name  </th>
+    <th >Size  </th>
+    <th >Height  </th>
+    <th >Type  </th>
+    <th >Salary  </th>
+  </tr>
+
+    <% rows.forEach(function(r) { %>
+      <tr>
+        <td ><%= r.name %></td>
+        <td ><%= r.size %></td>
+        <td > <%= r.height %></td>
+        <td > <%= r.type %></td>
+        <td > <%= r.salary %></td>
+        </tr>
+    <% }); %>
+</table>
+
+</div>
+</body>
+</html>
