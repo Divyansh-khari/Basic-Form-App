@@ -92,13 +92,14 @@ else{
 
 canvas.addEventListener('click',(evt)=>{
   var getUserInfo=`SELECT * FROM Person WHERE name='${name}'`;
-  pool.query(getUserInfo,(error,result) =>{
-    if(error){
-      res.end(error);
-    }
-    var results ={'rows': result.rows}
-    res.render('pages/db', results);
-    })
+  const result = await client.query(deleteQuery);
+       client.release();
+     } catch (err) {
+       console.error(err);
+       res.send("Error " + err);
+     }
+     res.send(`Thanks for updating the application information`);
+
 
 });
 </script>
