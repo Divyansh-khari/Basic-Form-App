@@ -40,6 +40,13 @@
   </canvas>
 </div>
 <script>
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 var canvas=document.getElementById('myCanvas');
 var l=10;
@@ -83,7 +90,17 @@ else{
 }
 <% }); %>
 
-canvas.addEventListener('click',(evt)=>{console.log("Hello")});
+canvas.addEventListener('click',(evt)=>{
+  var getUserInfo=`SELECT * FROM Person WHERE name='${name}'`;
+  pool.query(getUserInfo,(error,result) =>{
+    if(error){
+      res.end(error);
+    }
+    var results ={'rows': result.rows}
+    res.render('pages/db', results);
+    })
+
+});
 </script>
 
 </body>
